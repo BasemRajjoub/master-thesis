@@ -1,0 +1,153 @@
+/CLE,START  
+/units,mpa
+
+nPliesAfter = 4
+nDroppedPlies =1
+nPliesBefore = nPliesAfter+nDroppedPlies
+
+
+couponLength= 155
+couponWidth=25
+
+sliceLength = couponLength
+sliceWidth = couponWidth/4
+
+
+
+
+
+sv = 0.5
+s=5
+t=5
+h=sv*couponWidth/2
+
+
+t_drop = nDroppedPlies*t/2
+
+
+/PREP7  
+
+
+
+l1 =(sliceLength-h)/2
+l2 =(sliceLength+h)/2
+
+K,11,0,0,0, 
+K,12,l1,0,0
+K,13,l2,-sliceWidth,0
+K,14,0,-sliceWidth,0
+
+A,11,12,13,14
+
+
+
+K,21,l1+s,0,-t_drop
+K,22,sliceLength,0,-t_drop
+K,23,sliceLength,-sliceWidth,-t_drop
+K,24,l2+s,-sliceWidth,-t_drop
+
+A,21,22,23,24
+
+
+A,12,21,24,13
+
+KWPAVE,14 
+CSYS,4  
+ARSYM,Y,ALL,,,,1,0  
+
+KWPAVE,1 
+CSYS,4  
+ARSYM,Y,ALL,,,,1,0 
+
+
+!ASEL,S,LOC,Z,0 
+!VEXT,ALL,, ,0,0,-t
+
+
+
+ASEL,All
+!AADD,ALL  
+!ASEL,All
+!cm,tmpArea,Area
+
+
+VEXT,ALL, ,1 ,0,0,t
+!cmsel,a,tmpArea,Area
+!VEXT,ALL,, ,0,0,-t
+
+
+VADD,ALL  
+
+
+tmp = (nPliesBefore-nDroppedPlies)/2
+VGEN,tmp,ALL, , , , ,t, ,0 
+
+KWPAVE,17 
+CSYS,4  
+VSYMM,Z,ALL
+
+KWPAVE,9 
+CSYS,4 
+
+
+
+
+
+
+!n = 1
+!nn=1
+!*do,i,0,50,10
+!
+!K,,0,0,i 
+!K,,l1,0,i
+!K,,l2,-sliceWidth,i
+!K,,0,-sliceWidth,i
+!
+!A,n,n+1,n+2,n+3
+!
+!K,,l1+s,0,-t/2+i
+!K,,sliceLength,0,-t/2+i
+!K,,sliceLength,-sliceWidth,-t/2+i
+!K,,l2+s,-sliceWidth,-t/2 +i
+!
+!A,n+4,n+5,n+6,n+7
+!A,n+1,n+4,n+7,n+2
+!
+!
+!VEXT,nn,nn+2 ,1 ,0,0,10
+!
+!nn=nn+3
+!n=n+8
+!
+!*enddo
+
+!VEXT,ALL, ,1 ,0,0,5
+
+
+
+!KWPAVE,14 
+!CSYS,4  
+!ARSYM,Y,ALL,,,,1,0  
+
+
+
+
+!VGLUE,all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

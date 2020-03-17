@@ -1,0 +1,65 @@
+# encoding: utf-8
+# 2019 R3
+SetScriptVersion(Version="19.5.112")
+template1 = GetTemplate(TemplateName="Geometry")
+system1 = template1.CreateSystem()
+geometry1 = system1.GetContainer(ComponentName="Geometry")
+geometry1.Edit()
+template2 = GetTemplate(TemplateName="Microsoft Office Excel")
+system2 = template2.CreateSystem(
+    Position="Right",
+    RelativeTo=system1)
+analysis1 = system2.GetContainer(ComponentName="Analysis")
+setup1 = analysis1.GetExcelSetup()
+xlsfile1 = setup1.AddFile(FilePath="D:/Google Drive/Plan.xlsx")
+setup1.DeleteFile(File=xlsfile1)
+xlsfile2 = setup1.AddFile(FilePath="D:/Google Drive/Uni/Stipendien/Stipendien.xlsx")
+system2.Delete()
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Save(Overwrite=True)
+Refresh()
+ClearMessages()
+template3 = GetTemplate(
+    TemplateName="ACP",
+    Solver="Pre")
+geometryComponent1 = system1.GetComponent(Name="Geometry")
+system3 = template3.CreateSystem(
+    ComponentsToShare=[geometryComponent1],
+    Position="Right",
+    RelativeTo=system1)
+engineeringData1 = system3.GetContainer(ComponentName="Engineering Data")
+material1 = engineeringData1.GetMaterial(Name="Structural Steel")
+material1.SetSuppression(Suppressed=True)
+favorites1 = EngData.LoadFavoriteItems()
+library1 = EngData.OpenLibrary(
+    Name="Composite Materials",
+    Source="Composite_Materials.xml")
+matl1 = engineeringData1.ImportMaterial(
+    Name="Epoxy Carbon UD (230 GPa) Prepreg",
+    Source="Composite_Materials.xml")
+matl2 = engineeringData1.ImportMaterial(
+    Name="Carbon Fiber (230 GPa)",
+    Source="Composite_Materials.xml")
+matl3 = engineeringData1.ImportMaterial(
+    Name="Resin Epoxy",
+    Source="Composite_Materials.xml")
+matl4 = engineeringData1.ImportMaterial(
+    Name="Epoxy Carbon UD (230 GPa) Prepreg",
+    Source="Composite_Materials.xml")
+EngData.EnableFilter(Enable=False)
+matl5 = engineeringData1.ImportMaterial(
+    Name="Epoxy Carbon UD (230 GPa) Prepreg",
+    Source="Composite_Materials.xml")
+EngData.EnableFilter()
+matl5.Delete()
+matl4.Delete()
+matl1.Delete()
+Refresh()
+model1 = system3.GetContainer(ComponentName="Model")
+model1.Edit()
