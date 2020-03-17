@@ -1,0 +1,55 @@
+# Python Script, API Version = V18
+
+selection = Selection.SelectAll()
+if selection.Items.Count  <> 0:
+    result = Delete.Execute(selection)
+
+
+
+W = 25
+L = 155
+SV = Parameters.SV
+h = SV*W/4
+
+
+
+# Sketch Rectangle
+plane = Plane.PlaneXY
+result = ViewHelper.SetSketchPlane(plane)
+point1 = Point2D.Create(MM(0),MM(0))
+point2 = Point2D.Create(MM(L),MM(0))
+point3 = Point2D.Create(MM(L),MM(W))
+result = SketchRectangle.Create(point1, point2, point3)
+# EndBlock
+p1 = Point2D.Create(MM(50), MM(W))
+p2 = Point2D.Create(MM(50), MM(0))
+SketchLine.Create(p1, p2)
+p1 = Point2D.Create(MM(L-50), MM(W))
+p2 = Point2D.Create(MM(L-50), MM(0))
+SketchLine.Create(p1, p2)
+
+
+
+# Sketch Line
+p1 = Point2D.Create(MM(0.5*(L-h)), MM(0))
+p2 = Point2D.Create(MM(0.5*(L+h)), MM(W/4))
+SketchLine.Create(p1, p2)
+p3 = Point2D.Create(MM(0.5*(L-h)), MM(W/2))
+SketchLine.Create(p2, p3)
+p4 = Point2D.Create(MM(0.5*(L+h)), MM(3*W/4))
+SketchLine.Create(p3, p4)
+p5 = Point2D.Create(MM(0.5*(L-h)), MM(W))
+SketchLine.Create(p4, p5)
+
+
+# Fill
+selection = Selection.Create(Curve11, Curve12, Curve13, Curve14, Curve15, Curve16, Curve17, Curve18, Curve19, Curve20)
+secondarySelection = Selection()
+options = FillOptions()
+result = Fill.Execute(selection, secondarySelection, options, FillMode.Sketch, Info9)
+# EndBlock
+
+# Detach Faces
+selBodies = Body1
+result = DetachFaces.Execute(selBodies)
+# EndBlock
