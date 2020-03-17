@@ -1,0 +1,247 @@
+/CLE,START  
+/units,mpa
+
+nPliesAfter = 4
+nDroppedPlies =2
+nPliesBefore = nPliesAfter+nDroppedPlies
+
+
+couponLength= 155
+couponWidth=25
+L = 155
+W = 25
+
+
+sliceLength = couponLength
+sliceWidth = couponWidth/4
+
+
+
+
+
+sv = 1.5
+s=5
+t=5
+h=sv*couponWidth/2
+
+
+t_drop = nDroppedPlies*t/2
+
+
+/PREP7  
+
+!ET,1,SOLID186 
+ET,1,181
+
+MPTEMP,,,,,,,,  
+MPTEMP,1,0  
+MPDATA,EX,1,,4000   
+MPDATA,EY,1,,1000   
+MPDATA,EZ,1,,1000   
+MPDATA,PRXY,1,,0.4  
+MPDATA,PRYZ,1,,0.4  
+MPDATA,PRXZ,1,,0.4  
+MPDATA,GXY,1,,1000  
+MPDATA,GYZ,1,,1000  
+MPDATA,GXZ,1,,1000  
+sect,1,shell,,  
+secdata, 1,1,0.0,3  
+secdata, 2,1,90,3   
+secdata, 1,1,0.0,3  
+
+
+k,1,0,0,0
+k,2,100,0,0
+k,3,100,50,0
+k,4,0,50,0
+
+a,1,2,3,4
+
+k,5,-50,0,0
+k,6,-50,50,0
+
+a,1,5,6,4
+
+
+
+
+
+l1 =(couponLength-h)/2
+l2 =l1+h
+
+K,1,0,0,0, 
+K,2,l1,0,0
+K,3,l2,-W/4,0
+K,4,l1,-W/2,0
+K,5,l2,-3*W/4,0
+K,6,l1,-W,0
+K,7,0,-W,0
+
+
+
+A,1,2,3,4,5,6,7
+
+
+KGEN,2,2,6,1,s, ,-t_drop, ,0  
+
+K,13,couponLength,-W,-t_drop
+K,14,couponLength,0,-t_drop
+
+A,2,8,9,3
+A,9,3,4,10
+A,4,10,11,5
+A,5,11,12,6
+
+
+A,8,9,10,11,12,13,14
+
+
+!*if,nDroppedPlies,EQ,1,then
+!*else
+!*endif
+
+
+VEXT,ALL, ,1 ,0,0,t
+VADD,ALL  
+
+tmp = (nPliesBefore-nDroppedPlies)/2
+VGEN,tmp,ALL, , , , ,t, ,0 
+
+
+KWPAVE,12
+CSYS,4  
+VSYMM,Z,ALL
+
+
+
+KWPAVE,7
+CSYS,4
+
+NUMCMP,VOLU 
+NUMSTR,VOLU,100
+
+*if,nDroppedPlies,EQ,1,then
+	BLC4,0,0,L,W,-t
+	VSBA,100,all  
+	VDELE,101, , ,1
+	VDELE,102, , ,1
+*elseif ,nDroppedPlies,EQ,2,then
+	BLC4,0,0,L,W,-2*t
+	VSBA,100,all  
+	VDELE,101, , ,1
+	VDELE,102, , ,1
+	KWPAVE,11
+	CSYS,4
+	VSBW,103   
+*endif
+
+
+/PNUM,VOLU,1
+/SHRINK,0.5 
+/REPLOT 
+
+
+
+!VSEL,NONE
+![volume generation command]
+!XXXX=VLNEXT(0)
+
+!boptn,keep,yes
+
+
+!VPTN,All   
+!VGLUE,All  
+!VOVLAP,All 
+
+!VEXT,1,5,1,0,0,-t
+
+
+
+!KWPAVE,14 
+!CSYS,4  
+!ARSYM,Y,ALL,,,,1,0  
+!
+!KWPAVE,1 
+!CSYS,4  
+!ARSYM,Y,ALL,,,,1,0 
+
+
+
+!cmsel,a,tmpArea,Area
+!VEXT,ALL,, ,0,0,-t
+
+
+
+
+
+
+
+!KWPAVE,17 
+!CSYS,4  
+!VSYMM,Z,ALL
+!
+!KWPAVE,9 
+!CSYS,4 
+
+
+
+
+
+
+!n = 1
+!nn=1
+!*do,i,0,50,10
+!
+!K,,0,0,i 
+!K,,l1,0,i
+!K,,l2,-sliceWidth,i
+!K,,0,-sliceWidth,i
+!
+!A,n,n+1,n+2,n+3
+!
+!K,,l1+s,0,-t/2+i
+!K,,sliceLength,0,-t/2+i
+!K,,sliceLength,-sliceWidth,-t/2+i
+!K,,l2+s,-sliceWidth,-t/2 +i
+!
+!A,n+4,n+5,n+6,n+7
+!A,n+1,n+4,n+7,n+2
+!
+!
+!VEXT,nn,nn+2 ,1 ,0,0,10
+!
+!nn=nn+3
+!n=n+8
+!
+!*enddo
+
+!VEXT,ALL, ,1 ,0,0,5
+
+
+
+!KWPAVE,14 
+!CSYS,4  
+!ARSYM,Y,ALL,,,,1,0  
+
+
+
+
+!VGLUE,all
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
