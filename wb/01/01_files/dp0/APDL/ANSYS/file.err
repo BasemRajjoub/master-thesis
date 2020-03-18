@@ -1,0 +1,16 @@
+/COM,ANSYS RELEASE 2019 R3           BUILD 19.5      UP20190805       14:05:22
+
+ *** WARNING ***                         CP =       1.688   TIME= 14:05:24
+ Deactivation of element shape checking is not recommended.              
+
+ *** WARNING ***                         CP =      27.781   TIME= 14:09:40
+ The view for layer plots is currently NOT changeable.                   
+  To enable layer view manipulation, issue /GROPTS,VIEW,1.               
+
+ *** WARNING ***                         CP =      27.859   TIME= 14:09:40
+ The view for layer plots is currently NOT changeable.                   
+  To enable layer view manipulation, issue /GROPTS,VIEW,1.               
+
+ *** WARNING ***                         CP =      27.891   TIME= 14:09:40
+ The view for layer plots is currently NOT changeable.                   
+  To enable layer view manipulation, issue /GROPTS,VIEW,1.               

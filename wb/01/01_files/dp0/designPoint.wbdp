@@ -2,9 +2,10 @@
 <Storage>
   <Project Version="9.1" />
   <Addins>
-    <addin-list valType="String">[Ansys.ParameterManager.ParameterManagerAddin, ACP.Addin, Ansys.Dpdb.DpdbAddin, Ansys.Simulation.Core.Addin, Ansys.EngineeringData.Commands.Addin, Ansys.DesignModeler.Core.Addin]</addin-list>
+    <addin-list valType="String">[Ansys.ParameterManager.ParameterManagerAddin, ACP.Addin, Ansys.ANSYS.Core.Addin, Ansys.Dpdb.DpdbAddin, Ansys.Simulation.Core.Addin, Ansys.EngineeringData.Commands.Addin, Ansys.DesignModeler.Core.Addin]</addin-list>
     <Addin Name="Ansys.ParameterManager.ParameterManagerAddin" Version="7.3" />
     <Addin Name="ACP.Addin" Version="3.0.1.0" />
+    <Addin Name="Ansys.ANSYS.Core.Addin" Version="19.0.0.0" />
     <Addin Name="Ansys.Dpdb.DpdbAddin" Version="4.0">
       <is-optional-on-resume valType="Boolean">true</is-optional-on-resume>
     </Addin>
@@ -13,7 +14,7 @@
     <Addin Name="Ansys.DesignModeler.Core.Addin" Version="19.3.1.0" />
   </Addins>
   <Containers>
-    <container-map valType="String">{"Scopes": Ansys.ParameterManager.ParameterManagerAddin:scopes, "Geometry": Ansys.DesignModeler.Core.Addin:Geometry, "Engineering Data": "Ansys.EngineeringData.Commands.Addin:Engineering Data", "Model": Ansys.Simulation.Core.Addin:SimulationModel, "Setup": ACP.Addin:SetupContainer}</container-map>
+    <container-map valType="String">{"Scopes": Ansys.ParameterManager.ParameterManagerAddin:scopes, "Geometry": Ansys.DesignModeler.Core.Addin:Geometry, "Engineering Data": "Ansys.EngineeringData.Commands.Addin:Engineering Data", "Model": Ansys.Simulation.Core.Addin:SimulationModel, "Setup": ACP.Addin:SetupContainer, "Setup 1": Ansys.ANSYS.Core.Addin:ANSYSSetup}</container-map>
     <static-container-ids valType="String">{"Scopes": Scopes}</static-container-ids>
     <Container Name="Scopes" Version="1.0">
       <container-type valType="String">Ansys.ParameterManager.ParameterManagerAddin:scopes</container-type>
@@ -34,8 +35,8 @@
       <container-type valType="String">Ansys.DesignModeler.Core.Addin:Geometry</container-type>
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
-      <last-updated valType="Int64">9897</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 9978, "Input": 9895, "Output": 9895}</last-modified-by-usage>
+      <last-updated valType="Int64">11885</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 12269, "Input": 11883, "Output": 11883}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
       <unique-system-dir valType="String">Geom</unique-system-dir>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
@@ -205,7 +206,7 @@
       <last-updated valType="Int64">8800</last-updated>
       <last-modified-by-usage valType="String">{"Extrinsic": 8444, "Input": 8798, "Output": 3357}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
-      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 3336, "Engineering Data": 8799, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "Model": 0, "Setup": 0, "Composite Materials": 0}</last-update-regen-times>
+      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 3336, "Engineering Data": 8799, "Model": 0, "Setup": 0}</last-update-regen-times>
       <unique-system-dir valType="String">ACP-Pre</unique-system-dir>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Engineering Data/EngineeringData:Engineering Data" Version="1.0">
@@ -813,10 +814,10 @@
       <container-type valType="String">Ansys.Simulation.Core.Addin:SimulationModel</container-type>
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
-      <last-updated valType="Int64">9940</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 9939, "Input": 9925, "Output": 9925}</last-modified-by-usage>
+      <last-updated valType="Int64">12156</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 12266, "Input": 12127, "Output": 12127}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
-      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 9897, "Engineering Data": 8800, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "Model": 9844, "Setup": 9871, "Composite Materials": 0}</last-update-regen-times>
+      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Scopes": 0, "Geometry": 11885, "Engineering Data": 8800, "Model": 12084, "Setup": 12108, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0}</last-update-regen-times>
       <unique-system-dir valType="String">ACP-Pre</unique-system-dir>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Model/SimulationConnection:SimulationConnection" Version="1.0">
@@ -867,12 +868,13 @@
       <Object Name="/Model/SimulationGeneratedSolidMesh:SimulationGeneratedSolidMesh" Version="1.0">
         <class-type valType="String">SimulationGeneratedSolidMesh</class-type>
         <object-name valType="String">SimulationGeneratedSolidMesh</object-name>
-        <member-data valType="String">{"DisplayText": "SimulationGeneratedSolidMesh", "DataConnections": [], "TransferDataObject": $$2963baf6-9530-403e-9d6d-695867bc6ee5, "VersionNumber": 1, "TransferFile": None, "UnitSystem": None}</member-data>
+        <member-data valType="String">{"DisplayText": "SimulationGeneratedSolidMesh", "DataConnections": [], "TransferDataObject": $$2963baf6-9530-403e-9d6d-695867bc6ee5, "VersionNumber": 1, "TransferFile": None, "UnitSystem": "WBUST_StandardNMMton"}</member-data>
       </Object>
       <Object Name="/Model/ModelOutputSettingsForACP:ModelOutputSettingsForACP" Version="1.0">
         <class-type valType="String">ModelOutputSettingsForACP</class-type>
         <object-name valType="String">ModelOutputSettingsForACP</object-name>
-        <member-data valType="String">{"DisplayText": "ModelOutputSettingsForACP", "LengthUnit": ""}</member-data>
+        <member-data valType="String">{"DisplayText": "ModelOutputSettingsForACP", "LengthUnit": "mm"}</member-data>
+        <properties-setByUserFlag-data valType="String">["LengthUnit"]</properties-setByUserFlag-data>
       </Object>
       <Object Name="/Model/RemoteUpdateInformationStorage:RemoteUpdateInformationStorage" Version="1.0">
         <class-type valType="String">RemoteUpdateInformationStorage</class-type>
@@ -887,7 +889,7 @@
       <Object Name="/Model/OutputsGeneratedManagerDataEntityType:OutputsGeneratedManagerObject" Version="1.0">
         <class-type valType="String">OutputsGeneratedManagerDataEntityType</class-type>
         <object-name valType="String">OutputsGeneratedManagerObject</object-name>
-        <member-data valType="String">{"DisplayText": "OutputsGeneratedManagerObject", "outputGeneratedTimes": {"ANSYSHDF5Model": 9925}}</member-data>
+        <member-data valType="String">{"DisplayText": "OutputsGeneratedManagerObject", "outputGeneratedTimes": {"ANSYSHDF5Model": 12127}}</member-data>
       </Object>
       <Object Name="/Model/SimulationMeshProperties:SimulationMeshProperties" Version="1.0">
         <class-type valType="String">SimulationMeshProperties</class-type>
@@ -922,17 +924,17 @@
       <Object Name="/Model/MechanicalMeshFile:ANSYSHDF5Model" Version="1.0">
         <class-type valType="String">MechanicalMeshFile</class-type>
         <object-name valType="String">ANSYSHDF5Model</object-name>
-        <member-data valType="String">{"DisplayText": "ANSYSHDF5Model", "TransferFile": $$5a88bcf7-5fff-4706-bf2b-5b5b0fea8a4d, "UnitSystem": ""}</member-data>
+        <member-data valType="String">{"DisplayText": "ANSYSHDF5Model", "TransferFile": $$e16cefe2-9815-4c18-9774-ef3d0e715d1a, "UnitSystem": "WBUST_StandardNMMton"}</member-data>
       </Object>
     </Container>
     <Container Name="Setup" Version="1.0">
       <container-type valType="String">ACP.Addin:SetupContainer</container-type>
       <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
       <deleted-sources valType="String">[]</deleted-sources>
-      <last-updated valType="Int64">9964</last-updated>
-      <last-modified-by-usage valType="String">{"Extrinsic": 9976, "Input": 9976, "Output": 9976}</last-modified-by-usage>
+      <last-updated valType="Int64">12214</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 12263, "Input": 12192, "Output": 12192}</last-modified-by-usage>
       <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
-      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Scopes": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Geometry": 9897, "Engineering Data": 8800, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "Model": 9940, "Setup": 9871, "Composite Materials": 0}</last-update-regen-times>
+      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Scopes": 0, "Geometry": 11885, "Engineering Data": 8800, "Model": 12156, "Setup": 12182, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0}</last-update-regen-times>
       <unique-system-dir valType="String">ACP-Pre</unique-system-dir>
       <contains-significant-data valType="Boolean">true</contains-significant-data>
       <Object Name="/Setup/ACPUpstreamConnectionsObject:ACPUpstreamConnectionsObject" Version="1.0">
@@ -1012,19 +1014,38 @@
           <Version valType="String">1</Version>
           <value-keys valType="String">{"Version": System.Int32}</value-keys>
           <dictionary-keys valType="String">[m_DataTypeToRequests, m_ConnectionToDataTypes]</dictionary-keys>
-          <m_DataTypeToRequests />
-          <m_ConnectionToDataTypes />
+          <m_DataTypeToRequests>
+            <dictionary-keys valType="String">[InputFile]</dictionary-keys>
+            <InputFile>
+              <EntityContainerType valType="String">ACP.Addin:SetupContainer</EntityContainerType>
+              <EntityContainerName valType="String">Setup</EntityContainerName>
+              <Entity valType="String">/Setup/SolidSectionData:ACPCDBEntity</Entity>
+              <DataContainerType valType="String">Project:FileContainer</DataContainerType>
+              <DataContainerName valType="String">FileContainer</DataContainerName>
+              <Data valType="String">/FileContainer/FileReference:F32</Data>
+              <value-keys valType="String">{"EntityContainerType": System.String, "EntityContainerName": System.String, "Entity": System.String, "DataContainerType": System.String, "DataContainerName": System.String, "Data": System.String}</value-keys>
+              <dictionary-keys valType="String">[Keys]</dictionary-keys>
+              <Keys>
+                <No0 valType="String">b29eab0b-f488-4297-9178-67eff563f4cb</No0>
+                <value-keys valType="String">{"No0": System.String}</value-keys>
+              </Keys>
+            </InputFile>
+          </m_DataTypeToRequests>
+          <m_ConnectionToDataTypes>
+            <GUIDb29eab0b-f488-4297-9178-67eff563f4cb valType="String">InputFile</GUIDb29eab0b-f488-4297-9178-67eff563f4cb>
+            <value-keys valType="String">{"GUIDb29eab0b-f488-4297-9178-67eff563f4cb": System.String}</value-keys>
+          </m_ConnectionToDataTypes>
         </custom-data>
       </Object>
       <Object Name="/Setup/SolidSectionData:ACPCDBEntity" Version="1.0">
         <class-type valType="String">SolidSectionData</class-type>
         <object-name valType="String">ACPCDBEntity</object-name>
-        <member-data valType="String">{"DisplayText": "ACPCDBEntity", "TransferFile": None, "AuxiliaryFiles": None, "CompositeSectionFiles": None, "AllowRenumbering": False, "InputFile": None}</member-data>
+        <member-data valType="String">{"DisplayText": "ACPCDBEntity", "TransferFile": $$cdb2f8ae-1119-4aef-b66f-a771892733bd, "AuxiliaryFiles": [$$cdb2f8ae-1119-4aef-b66f-a771892733bd], "CompositeSectionFiles": [$$41c6e639-c5a1-4edd-aa42-2fc261f49149], "AllowRenumbering": True, "InputFile": $$cdb2f8ae-1119-4aef-b66f-a771892733bd}</member-data>
       </Object>
       <Object Name="/Setup/EnhancedModelData:EnhancedModelData" Version="1.0">
         <class-type valType="String">EnhancedModelData</class-type>
         <object-name valType="String">EnhancedModelData</object-name>
-        <member-data valType="String">{"DisplayText": "EnhancedModelData", "DataConnections": [], "TransferDataObject": $$30f3e226-8ebb-48e0-9f54-9255b5c47d76}</member-data>
+        <member-data valType="String">{"DisplayText": "EnhancedModelData", "DataConnections": [], "TransferDataObject": $$0979b45c-a640-429d-9bf7-385b789aefc3}</member-data>
       </Object>
       <Object Name="/Setup/CompositeEngineeringData:CompositeEngineeringDataProvider" Version="1.0">
         <class-type valType="String">CompositeEngineeringData</class-type>
@@ -1034,16 +1055,72 @@
       <Object Name="/Setup/ACPSetupData:ACPSetupDataProvider" Version="1.0">
         <class-type valType="String">ACPSetupData</class-type>
         <object-name valType="String">ACPSetupDataProvider</object-name>
-        <member-data valType="String">{"DisplayText": "ACPSetupDataProvider", "DataConnections": [], "TransferDataObject": $$60eedd95-6bef-4637-80db-4e3e2d7f9032, "TransferFile": $$4690a635-cb9f-4446-bbe1-9939e8469c45}</member-data>
+        <member-data valType="String">{"DisplayText": "ACPSetupDataProvider", "DataConnections": [], "TransferDataObject": $$60eedd95-6bef-4637-80db-4e3e2d7f9032, "TransferFile": $$146c457c-d246-4464-9950-3b1e02f79a89}</member-data>
       </Object>
       <Object Name="/Setup/SetupDataObject:SetupReference" Version="1.0">
         <class-type valType="String">SetupDataObject</class-type>
         <object-name valType="String">SetupReference</object-name>
-        <member-data valType="String">{"DisplayText": "SetupReference", "IsCoupled": False, "EngineeringDataTransfer": $$90d4e5b2-44a1-4fb5-bcf7-c6caeabb6683, "ModelDataTransfer": $$5a88bcf7-5fff-4706-bf2b-5b5b0fea8a4d, "ModelDataUnitSystem": "DS_SOLV_MKS", "ModelEnhancementData": $$30f3e226-8ebb-48e0-9f54-9255b5c47d76, "ACPH5FileReference": $$4690a635-cb9f-4446-bbe1-9939e8469c45, "ACPFileReference": None, "CDBTransfers": [], "LoadModelGeometry": False, "AllowRenumbering": True, "StartupTimeout": 90, "ShouldBackup": True, "GeometryIs2D": False, "ErrorDetected": "NoError", "StartACPExecuted": True, "OutputsGenerated": False, "ModifyStateOnDownstreamConnection": False, "ACPMode": "Pre", "ShouldUpgradeToAcph5": False}</member-data>
+        <member-data valType="String">{"DisplayText": "SetupReference", "IsCoupled": False, "EngineeringDataTransfer": $$90d4e5b2-44a1-4fb5-bcf7-c6caeabb6683, "ModelDataTransfer": $$e16cefe2-9815-4c18-9774-ef3d0e715d1a, "ModelDataUnitSystem": "WBUST_StandardNMMton", "ModelEnhancementData": $$0979b45c-a640-429d-9bf7-385b789aefc3, "ACPH5FileReference": $$146c457c-d246-4464-9950-3b1e02f79a89, "ACPFileReference": None, "CDBTransfers": [$$cdb2f8ae-1119-4aef-b66f-a771892733bd], "LoadModelGeometry": False, "AllowRenumbering": True, "StartupTimeout": 90, "ShouldBackup": True, "GeometryIs2D": False, "ErrorDetected": "NoError", "StartACPExecuted": True, "OutputsGenerated": True, "ModifyStateOnDownstreamConnection": False, "ACPMode": "Pre", "ShouldUpgradeToAcph5": False}</member-data>
         <custom-data>
           <ShouldBackup valType="String">True</ShouldBackup>
           <value-keys valType="String">{"ShouldBackup": System.Boolean}</value-keys>
         </custom-data>
+      </Object>
+    </Container>
+    <Container Name="Setup 1" Version="1.0">
+      <container-type valType="String">Ansys.ANSYS.Core.Addin:ANSYSSetup</container-type>
+      <storage-scheme-id valType="String">version-1-format</storage-scheme-id>
+      <deleted-sources valType="String">[]</deleted-sources>
+      <last-updated valType="Int64">0</last-updated>
+      <last-modified-by-usage valType="String">{"Extrinsic": 12265, "Input": 12265, "Output": 12265}</last-modified-by-usage>
+      <outputs-generated-by-type valType="String">{}</outputs-generated-by-type>
+      <last-update-regen-times valType="String">{"Preferences": 0, "ToolbarExp": 0, "FileTypesContainer": 0, "FileContainer": 0, "Messages": 0, "Parameters": 0, "Schematic": 0, "ReportDataContainer": 0, "Graphics": 0, "Units": 0, "DpdbContainer": 0, "Scopes": 0, "Geometry": 11885, "Engineering Data": 8800, "Model": 12156, "Setup": 12214, "EngineeringDataGeneratedChartData": 0, "EngineeringDataCurveFit": 0, "EngineeringDataFavoriteItems": 0, "Setup 1": 0}</last-update-regen-times>
+      <unique-system-dir valType="String">APDL</unique-system-dir>
+      <contains-significant-data valType="Boolean">true</contains-significant-data>
+      <Object Name="/Setup 1/MapdlSetup:SetupDataObject" Version="1.0">
+        <class-type valType="String">MapdlSetup</class-type>
+        <object-name valType="String">SetupDataObject</object-name>
+        <member-data valType="String">{"DisplayText": "SetupDataObject", "CommandLineOptions": "", "DatabaseMemory": 1024, "WorkspaceMemory": 2048, "Processors": 2, "JobName": "file", "License": "", "Graphics": "WIN32", "Distributed": False, "MPIType": "Undefined", "MachineList": "", "GPUAccelerator": "None", "NumberOfGpusPerMachine": 1, "ReadStartAns": True, "CustomExecutablePath": "", "DownloadDistributedFiles": True, "InputFiles": [$$4a158402-13b9-46d9-b385-e9ffdd6fef88], "ReferenceFiles": [], "SetupHash": "333ba4de-8eb4-45f8-836b-e3c0c720584f"}</member-data>
+      </Object>
+      <Object Name="/Setup 1/MAPDLCdb:CDBDataObject" Version="1.0">
+        <class-type valType="String">MAPDLCdb</class-type>
+        <object-name valType="String">CDBDataObject</object-name>
+        <member-data valType="String">{"DisplayText": "CDBDataObject", "Guids": [], "Data": None, "AuxiliaryFiles": None, "TransferFile": None}</member-data>
+      </Object>
+      <Object Name="/Setup 1/MAPDLDatabase:DatabaseDataObject" Version="1.0">
+        <class-type valType="String">MAPDLDatabase</class-type>
+        <object-name valType="String">DatabaseDataObject</object-name>
+        <member-data valType="String">{"DisplayText": "DatabaseDataObject", "Guids": [], "Data": None, "AuxiliaryFiles": None, "TransferFile": None}</member-data>
+      </Object>
+      <Object Name="/Setup 1/MAPDLSolution:ResultsDataObject" Version="1.0">
+        <class-type valType="String">MAPDLSolution</class-type>
+        <object-name valType="String">ResultsDataObject</object-name>
+        <member-data valType="String">{"DisplayText": "ResultsDataObject", "Guids": [], "Data": None, "AuxiliaryFiles": None, "TransferFile": None}</member-data>
+      </Object>
+      <Object Name="/Setup 1/MAPDLResults:SolverDataDataObject" Version="1.0">
+        <class-type valType="String">MAPDLResults</class-type>
+        <object-name valType="String">SolverDataDataObject</object-name>
+        <member-data valType="String">{"DisplayText": "SolverDataDataObject", "Guids": [], "Data": None, "AuxiliaryFiles": None}</member-data>
+      </Object>
+      <Object Name="/Setup 1/HiddenPollingComponentSolveSettings:HiddenPollingComponentSolveSettings" Version="1.0">
+        <class-type valType="String">HiddenPollingComponentSolveSettings</class-type>
+        <object-name valType="String">HiddenPollingComponentSolveSettings</object-name>
+        <member-data valType="String">{"DisplayText": "HiddenPollingComponentSolveSettings", "UpdateOption": "Foreground", "RsmUserString": None, "ConfiguredQueue": {"OptionIcons": None, "OptionLabels": "Local", "Options": "Local", "ReadOnlyOptions": None, "OptionFeatureFlags": None, "OptionFilterFlags": None, "OptionLicenseFlags": None, "Value": "Local"}, "RsmJobName": "Workbench", "EnablePolling": True, "PollingInterval": "120 [s]", "ExecutionMode": "Serial", "NumberOfProcesses": 2}</member-data>
+      </Object>
+      <Object Name="/Setup 1/ExpertProperties:ExpertProperties" Version="1.0">
+        <class-type valType="String">ExpertProperties</class-type>
+        <object-name valType="String">ExpertProperties</object-name>
+        <member-data valType="String">{"DisplayText": "ExpertProperties", "ImportantNote": "These options are visible because a development environment variable is set", "ExpertPropertiesString": "", "EnableDebug": False, "EnableValidation": False, "EnableTesting": False, "EnableErrorReporting": True, "EnableWarningReporting": True, "EnableInfoReporting": False, "EnableFileBasedCommunication": False, "EnableSocketCommunication": False, "EnableFailureCauseReporting": True}</member-data>
+      </Object>
+      <Object Name="/Setup 1/ExtendedComponentSettingsForRsmDpUpdate:ExtendedComponentSettingsForRsmDpUpdate" Version="1.0">
+        <class-type valType="String">ExtendedComponentSettingsForRsmDpUpdate</class-type>
+        <object-name valType="String">ExtendedComponentSettingsForRsmDpUpdate</object-name>
+        <member-data valType="String">{"DisplayText": "ExtendedComponentSettingsForRsmDpUpdate", "SerialOnly": False, "UseLimitOnNumberOfCores": False, "LimitOnNumberOfCores": 2, "SharedMemoryParallel": False}</member-data>
+      </Object>
+      <Object Name="/Setup 1/SolidSectionTransferData:SolidSectionTransferData" Version="1.0">
+        <class-type valType="String">SolidSectionTransferData</class-type>
+        <object-name valType="String">SolidSectionTransferData</object-name>
+        <member-data valType="String">{"DisplayText": "SolidSectionTransferData", "FileName": "ACP-Pre_ACPSolidModel_SolidModel.1.cdb", "Deleted": False, "Data": $$0e30400f-51f6-4f46-a904-f38ca8d700f1, "Key": "b29eab0b-f488-4297-9178-67eff563f4cb", "UpstreamContainer": "Setup"}</member-data>
       </Object>
     </Container>
   </Containers>
