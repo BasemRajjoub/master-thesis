@@ -2,7 +2,7 @@
 /units,mpa
 
 nPliesAfter = 4
-nDroppedPlies =2
+nDroppedPlies =1
 nPliesBefore = nPliesAfter+nDroppedPlies
 
 
@@ -30,38 +30,38 @@ t_drop = nDroppedPlies*t/2
 
 /PREP7  
 
-!ET,1,SOLID186 
-ET,1,181
+!!ET,1,SOLID186 
+!ET,1,181
+!
+!MPTEMP,,,,,,,,  
+!MPTEMP,1,0  
+!MPDATA,EX,1,,4000   
+!MPDATA,EY,1,,1000   
+!MPDATA,EZ,1,,1000   
+!MPDATA,PRXY,1,,0.4  
+!MPDATA,PRYZ,1,,0.4  
+!MPDATA,PRXZ,1,,0.4  
+!MPDATA,GXY,1,,1000  
+!MPDATA,GYZ,1,,1000  
+!MPDATA,GXZ,1,,1000  
+!sect,1,shell,,  
+!secdata, 1,1,0.0,3  
+!secdata, 2,1,90,3   
+!secdata, 1,1,0.0,3  
 
-MPTEMP,,,,,,,,  
-MPTEMP,1,0  
-MPDATA,EX,1,,4000   
-MPDATA,EY,1,,1000   
-MPDATA,EZ,1,,1000   
-MPDATA,PRXY,1,,0.4  
-MPDATA,PRYZ,1,,0.4  
-MPDATA,PRXZ,1,,0.4  
-MPDATA,GXY,1,,1000  
-MPDATA,GYZ,1,,1000  
-MPDATA,GXZ,1,,1000  
-sect,1,shell,,  
-secdata, 1,1,0.0,3  
-secdata, 2,1,90,3   
-secdata, 1,1,0.0,3  
 
-
-k,1,0,0,0
-k,2,100,0,0
-k,3,100,50,0
-k,4,0,50,0
-
-a,1,2,3,4
-
-k,5,-50,0,0
-k,6,-50,50,0
-
-a,1,5,6,4
-
+!k,1,0,0,0
+!k,2,100,0,0
+!k,3,100,50,0
+!k,4,0,50,0
+!
+!a,1,2,3,4
+!
+!k,5,-50,0,0
+!k,6,-50,50,0
+!
+!a,1,5,6,4
+!
 
 
 
